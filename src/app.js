@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { PORT } from "./utils/env.js";
 import { connectDB } from "./config/database.js";
+import router from "./routes/route.js";
 
 const init = async () => {
   try {
@@ -21,6 +22,8 @@ const init = async () => {
         data: null,
       });
     });
+
+    app.use("/api", router);
 
     app.listen(PORT, () => {
       console.log(`Server running on port: ${PORT}`);
