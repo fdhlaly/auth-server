@@ -9,4 +9,4 @@ export const DB_HOST = process.env.DB_HOST;
 export const DB_PASS = process.env.DB_PASS;
 
 export const JWT_SECRET_TOKEN = process.env.JWT_SECRET_TOKEN;
-export const JWT_REFRESH_TOKEN = process.env.JWT_REFRESH_TOKEN;
+export const JWT_EXPIRATION_IN = process.env.JWT_EXPIRATION_IN;
