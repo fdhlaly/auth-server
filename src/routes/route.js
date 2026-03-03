@@ -17,13 +17,18 @@ router.get("/", authenticate, (req, res) => {
 });
 
 // protected route for admin only
-router.get("/admin", authenticate, authorizeRole("ADMIN"), (req, res) => {
-  res.status(200).json({
-    status: true,
-    message: "HELLO ADMIN",
-    data: req.user,
-  });
-});
+router.get(
+  "/admin",
+  authenticate,
+  authorizeRole("ADMIN", "SUPERADMIN"),
+  (req, res) => {
+    res.status(200).json({
+      status: true,
+      message: "HELLO ADMIN",
+      data: req.user,
+    });
+  },
+);
 
 // protected route for superadmin only
 router.get(
